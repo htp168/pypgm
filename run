@@ -1,0 +1,4 @@
+docker run -d --name webapp \
+	-p 8080:80 \
+	-v $PWD:/app \
+	tiangolo/uwsgi-nginx:python3.8-alpine
