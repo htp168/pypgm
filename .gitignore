@@ -5,3 +5,5 @@ Bin
 bin
 Lib
 lib
+lib64
+include
