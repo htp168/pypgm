@@ -1,0 +1,6 @@
+docker run -itd --name uwsgi-nginx \
+	-p 8080:80 \
+	-v $PWD:/app \
+	-v $PWD/repositories:/etc/apk/repositories \
+        -v $PWD/pip.conf:/root/.config/pip/pip.conf \
+	tiangolo/uwsgi-nginx:python3.8-alpine sh
