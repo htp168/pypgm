@@ -1,9 +1,0 @@
-docker run -itd \
-	-e UWSGI_APP="/app/myflask" \
-        -e UWSGI_INI="/app/myflask/uwsgi.ini" \
-	-p 8080:80 \
-	-v $PWD:/app \
-	-v $PWD/repositories:/etc/apk/repositories \
-        -v $PWD/pip.conf:/root/.config/pip/pip.conf \
-        -w $UWSGI_APP \
-	tiangolo/uwsgi-nginx:python3.8-alpine
