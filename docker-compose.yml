@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    image: tiangolo/uwsgi-nginx:python3.8-alpine
+    ports:
+      - 8080:80
+    volumes:
+      - $PWD:/app
+      - $PWD/repositories:/etc/apk/repositories
+      - $PWD/pip.conf:/root/.config/pip/pip.conf
+    environment:
+      - UWSGI_APP:"/app/myflask"
+      - UWSGI_INI:"/app/myflask/uwsgi.ini"
+    working_dir: /app/myflask
