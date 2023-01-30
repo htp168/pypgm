@@ -1,7 +1,10 @@
 #!/bin/sh
-cd $OLDPWD
+cd $PWD
 nginx &
-source $OLDPWD/bin/activate
+source $PWD/bin/activate
 if [ $? -eq 0 ]; then
-    uwsgi --ini uwsgi.ini
+    uwsgi --ini $UWSGI_INI 
+else
+    echo "Enviroment is not valiable, please check it"
+    nginx -s stop
 fi;
