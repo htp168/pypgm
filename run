@@ -3,6 +3,6 @@ docker run -itd --name uwsgi-nginx \
 	-v $PWD:/app \
 	-v $PWD/repositories:/etc/apk/repositories \
         -v $PWD/pip.conf:/root/.config/pip/pip.conf \
-        -e UWSGI_INI="/app/mydjango/uwsgi.ini" \
-        -w /app/mydjango \
+        -e UWSGI_INI="/app/myflask/uwsgi.ini" \
+        -w /app/myflask \
 	tiangolo/uwsgi-nginx:python3.8-alpine
